@@ -79,7 +79,7 @@
     "\n",
     "**Örnek Test Sonucu:**\n",
     "Test notebook'u çalıştırıldığında model, verilen görüntü için bir güven skoru üretir:\n",
-    "```text\n",
+    "```text\n", 
     "Sonuç: Malignant (Kanser)\n",
     "Güven Skoru: %98.57\n",
     "```\n",
