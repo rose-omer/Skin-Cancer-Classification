@@ -41,6 +41,10 @@ Model, Kaggle üzerindeki **"Skin Cancer: Malignant vs. Benign"** veri seti ile 
 * **Sınıflar:**
     * `Benign`: İyi huylu, zararsız lezyonlar.
     * `Malignant`: Kötü huylu, kanser riski taşıyan lezyonlar.
+## Ekran Görüntüsü
+![1735228830619](https://github.com/user-attachments/assets/21227c3f-24ec-4da3-a410-78ebf91a7a02)
+![1735228830384](https://github.com/user-attachments/assets/5969f976-f75d-409f-9b40-02dd07967a2c)
+![1735228830470](https://github.com/user-attachments/assets/3d88e49c-2203-452e-a799-e1a21e220f06)
 
 ### 📂 Klasör Yapısı
 Projeyi hatasız çalıştırmak için veriyi indirdikten sonra aşağıdaki dosya yapısını kurunuz:
@@ -56,9 +60,7 @@ root/
 │       └── malignant/
 ├── malignant-vs-benign-detection.ipynb  # Eğitim Dosyası
 ├── Test.ipynb                           # Test Dosyası
-├── 1735228830619.jfif                   # Görseller
-├── 1735228830470.jfif
-└── 1735228830384.jfif
+├── h.5 dosyası eğer varsa
 ```
 ##🚀 Kurulum ve Kullanım
 Projeyi yerel makinenizde çalıştırmak için adımları takip edin:
