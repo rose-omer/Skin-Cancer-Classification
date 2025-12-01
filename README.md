@@ -1,10 +1,4 @@
-{
- "cells": [
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# 🩺 Cilt Kanseri Tespiti ve Sınıflandırma (Skin Cancer Detection)\n",
+"# 🩺 Cilt Kanseri Tespiti ve Sınıflandırma (Skin Cancer Detection)\n",
     "\n",
     "![Proje Kapak Görseli](LINKEDIN_VİDEO_VEYA_KAPAK_RESMİ_LİNKİNİ_BURAYA_YAPIŞTIR)\n",
     "\n",
@@ -92,28 +86,3 @@
     "\n",
     "## 📜 Lisans\n",
     "Bu proje eğitim ve araştırma amaçlı geliştirilmiştir. Kesin tıbbi teşhis yerine geçmez. Veri seti lisansı için Kaggle sayfasını ziyaret ediniz."
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.8.5"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 4
-}
