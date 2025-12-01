@@ -1,88 +1,63 @@
-"# 🩺 Cilt Kanseri Tespiti ve Sınıflandırma (Skin Cancer Detection)\n",
-    "\n",
-    "![Proje Kapak Görseli](LINKEDIN_VİDEO_VEYA_KAPAK_RESMİ_LİNKİNİ_BURAYA_YAPIŞTIR)\n",
-    "\n",
-    "## 📖 Proje Hakkında\n",
-    "Bu proje, dermatoskopik görüntüleri analiz ederek cilt lezyonlarını **İyi Huylu (Benign)** veya **Kötü Huylu (Malignant)** olarak sınıflandıran, yüksek doğruluk oranına sahip bir yapay zeka uygulamasıdır.\n",
-    "\n",
-    "Erken teşhis, cilt kanseri tedavisinde hayati önem taşır. Bu çalışma, **Derin Öğrenme (Deep Learning)** teknikleri ve **Transfer Learning (Xception)** mimarisini kullanarak, doktorlara yardımcı olabilecek bir klinik karar destek sistemi sunmayı amaçlar. Ayrıca modelin sınıflandırma başarımını artırmak için deneysel olarak **XGBoost** algoritması da entegre edilmiştir.\n",
-    "\n",
-    "## 🛠 Kullanılan Teknolojiler ve Yöntemler\n",
-    "Proje geliştirme sürecinde aşağıdaki modern kütüphaneler ve teknikler kullanılmıştır:\n",
-    "\n",
-    "- **Python**: Veri bilimi ve modelleme için ana dil.\n",
-    "- **TensorFlow & Keras**: CNN (Convolutional Neural Network) tabanlı modelin eğitimi için.\n",
-    "- **XGBoost**: Derin öğrenme modelinden çıkarılan özniteliklerin (feature extraction) sınıflandırılması ve hassasiyetin artırılması için.\n",
-    "- **Scikit-learn**: Veri setinin ayrılması, model değerlendirmesi ve Confusion Matrix oluşturulması için.\n",
-    "- **Pandas & NumPy**: Veri manipülasyonu ve matris işlemleri için.\n",
-    "- **Matplotlib & Seaborn**: Eğitim sonuçlarının ve veri dağılımının görselleştirilmesi için.\n",
-    "\n",
-    "### 🧠 Model Mimarisi\n",
-    "Model, görüntü işleme ve sınıflandırma olmak üzere iki ana aşamadan oluşur:\n",
-    "1. **Veri Ön İşleme:** Görüntülerin 224x224 (veya 299x299) boyutlarına getirilmesi, normalizasyon ve `ImageDataGenerator` ile veri çoğaltma (augmentation).\n",
-    "2. **Özellik Çıkarımı (Feature Extraction):** Eğitilmiş CNN katmanları kullanılarak görsel özniteliklerin vektör haline getirilmesi.\n",
-    "3. **Sınıflandırma:** Çıkarılan özniteliklerin tam bağlantılı (Dense) katmanlar veya XGBoost sınıflandırıcısı ile sonuca dönüştürülmesi.\n",
-    "\n",
-    "![Model Eğitim Grafikleri](LINKEDIN_GRAFİK_RESMİ_LİNKİNİ_BURAYA_YAPIŞTIR)\n",
-    "\n",
-    "## 📊 Veri Seti (Dataset)\n",
-    "\n",
-    "> ⚠️ **UYARI:** Veri seti dosya boyutu (GB) nedeniyle bu GitHub deposuna **yüklenmemiştir**.\n",
-    "\n",
-    "Model, Kaggle üzerindeki **\"Skin Cancer: Malignant vs. Benign\"** veri seti ile eğitilmiştir.\n",
-    "\n",
-    "- **Veri Kaynağı:** [Kaggle - Skin Cancer Dataset](https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign)\n",
-    "- **Sınıflar:**\n",
-    "    - `Benign`: İyi huylu, zararsız lezyonlar.\n",
-    "    - `Malignant`: Kötü huylu, kanser riski taşıyan lezyonlar.\n",
-    "\n",
-    "### Klasör Yapısı\n",
-    "Projeyi hatasız çalıştırmak için veriyi indirdikten sonra aşağıdaki dosya yapısını kurunuz:\n",
-    "```text\n",
-    "root/\n",
-    "├── data/\n",
-    "│   ├── train/\n",
-    "│   │   ├── benign/\n",
-    "│   │   └── malignant/\n",
-    "│   └── test/\n",
-    "│       ├── benign/\n",
-    "│       └── malignant/\n",
-    "├── malignant-vs-benign-detection.ipynb\n",
-    "├── Test.ipynb\n",
-    "└── model.h5 (varsa)\n",
-    "```\n",
-    "\n",
-    "## 🚀 Kurulum ve Kullanım\n",
-    "\n",
-    "Projeyi yerel makinenizde çalıştırmak için adımları takip edin:\n",
-    "\n",
-    "1. **Repoyu Klonlayın:**\n",
-    "   ```bash\n",
-    "   git clone [https://github.com/KULLANICI_ADINIZ/PROJE_ADI.git](https://github.com/KULLANICI_ADINIZ/PROJE_ADI.git)\n",
-    "   cd PROJE_ADI\n",
-    "   ```\n",
-    "\n",
-    "2. **Gerekli Kütüphaneleri Yükleyin:**\n",
-    "   ```bash\n",
-    "   pip install tensorflow xgboost scikit-learn pandas numpy matplotlib seaborn jupyter\n",
-    "   ```\n",
-    "\n",
-    "3. **Modeli Eğitin veya Test Edin:**\n",
-    "   - `malignant-vs-benign-detection.ipynb`: Modeli sıfırdan eğitmek için.\n",
-    "   - `Test.ipynb`: Hazır model (`.h5`) ile tahmin yapmak için.\n",
-    "\n",
-    "## 📈 Performans Analizi\n",
-    "\n",
-    "Modelin başarısı, test verisi üzerinde **Confusion Matrix (Karmaşıklık Matrisi)** ve Doğruluk (Accuracy) skorları ile ölçülmüştür.\n",
-    "\n",
-    "![Confusion Matrix](LINKEDIN_CONFUSION_MATRIX_RESMİ_LİNKİNİ_BURAYA_YAPIŞTIR)\n",
-    "\n",
-    "**Örnek Test Sonucu:**\n",
-    "Test notebook'u çalıştırıldığında model, verilen görüntü için bir güven skoru üretir:\n",
-    "```text\n", 
-    "Sonuç: Malignant (Kanser)\n",
-    "Güven Skoru: %98.57\n",
-    "```\n",
-    "\n",
-    "## 📜 Lisans\n",
-    "Bu proje eğitim ve araştırma amaçlı geliştirilmiştir. Kesin tıbbi teşhis yerine geçmez. Veri seti lisansı için Kaggle sayfasını ziyaret ediniz."
+# 🩺 Cilt Kanseri Tespiti ve Sınıflandırma (Skin Cancer Detection)
+
+![Proje Kapak Görseli](BURAYA_KAPAK_FOTOGRAFI_LINKI_GELECEK_VEYA_DOSYA_YOLU)
+
+> **"Erken teşhis hayat kurtarır."** > Bu proje, yapay zeka destekli görüntü işleme teknikleri kullanarak cilt lezyonlarını analiz eder ve kanser riskini tahmin eder.
+
+## 📖 Proje Hakkında
+
+Bu çalışma, dermatoskopik görüntüleri analiz ederek cilt lezyonlarını **İyi Huylu (Benign)** veya **Kötü Huylu (Malignant)** olarak sınıflandıran, yüksek doğruluk oranına sahip bir Derin Öğrenme (Deep Learning) modelidir.
+
+Projede, görüntü sınıflandırma alanında başarısı kanıtlanmış **Transfer Learning (Xception)** mimarisi kullanılmış ve sınıflandırma başarısını maksimize etmek için **XGBoost** algoritması ile hibrit bir yapı denenmiştir.
+
+### 🎯 Projenin Amacı
+* Cilt kanseri teşhisinde doktorlara yardımcı olabilecek bir **Klinik Karar Destek Sistemi** oluşturmak.
+* İyi huylu ve kötü huylu lezyonlar arasındaki ince farkları makine öğrenmesi ile ayırt etmek.
+* Manuel teşhis hatalarını minimize etmek.
+
+---
+
+## 🛠 Kullanılan Teknolojiler ve Yöntemler
+
+Proje geliştirme sürecinde aşağıdaki modern kütüphaneler ve teknikler kullanılmıştır:
+
+| Teknoloji | Açıklama |
+| :--- | :--- |
+| **Python** | Ana programlama dili. |
+| **TensorFlow / Keras** | Derin öğrenme modeli (CNN & Transfer Learning) eğitimi için. |
+| **Xception** | Özellik çıkarımı (Feature Extraction) için kullanılan ön eğitimli model. |
+| **XGBoost** | Çıkarılan öznitelikleri sınıflandırarak hassasiyeti artırmak için. |
+| **Scikit-learn** | Veri ön işleme, metrik hesaplama ve Confusion Matrix için. |
+| **Pandas & NumPy** | Veri manipülasyonu ve matris işlemleri. |
+| **Matplotlib & Seaborn** | Veri görselleştirme ve başarı grafikleri. |
+
+![Model Mimarisi veya Eğitim Grafiği](BURAYA_EGITIM_GRAFIGI_LINKI_GELECEK)
+
+---
+
+## 📊 Veri Seti (Dataset)
+
+⚠️ **ÖNEMLİ:** Veri seti dosya boyutu (GB) nedeniyle bu GitHub deposuna **yüklenmemiştir**.
+
+Model, Kaggle üzerindeki **"Skin Cancer: Malignant vs. Benign"** veri seti ile eğitilmiştir.
+
+* **Veri Kaynağı:** [Kaggle - Skin Cancer Dataset](https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign)
+* **Sınıflar:**
+    * `Benign`: İyi huylu, zararsız lezyonlar.
+    * `Malignant`: Kötü huylu, kanser riski taşıyan lezyonlar.
+
+### 📂 Klasör Yapısı
+Projeyi hatasız çalıştırmak için veriyi indirdikten sonra aşağıdaki dosya yapısını kurunuz:
+
+```text
+root/
+├── data/
+│   ├── train/
+│   │   ├── benign/
+│   │   └── malignant/
+│   └── test/
+│       ├── benign/
+│       └── malignant/
+├── malignant-vs-benign-detection.ipynb  # Eğitim Dosyası
+├── Test.ipynb                           # Test Dosyası
+└── model.h5 (varsa)                     # Eğitilmiş Model
