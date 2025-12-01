@@ -1,7 +1,4 @@
 # 🩺 Cilt Kanseri Tespiti ve Sınıflandırma (Skin Cancer Detection)
-
-![Proje Kapak Görseli](1735228830619.jfif)
-
 > **"Erken teşhis hayat kurtarır."**
 > Bu proje, yapay zeka destekli görüntü işleme teknikleri kullanarak cilt lezyonlarını analiz eder ve kanser riskini tahmin eder.
 
@@ -70,8 +67,7 @@ Projeyi yerel makinenizde çalıştırmak için adımları takip edin:
 
 ```Bash
 
-git clone [https://github.com/KULLANICI_ADINIZ/PROJE_ADI.git](https://github.com/KULLANICI_ADINIZ/PROJE_ADI.git)
-cd PROJE_ADI
+git clone 
 2. Gerekli Kütüphaneleri Yükleyin:
 ```
 ```Bash
