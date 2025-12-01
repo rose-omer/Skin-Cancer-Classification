@@ -1,8 +1,9 @@
 # 🩺 Cilt Kanseri Tespiti ve Sınıflandırma (Skin Cancer Detection)
 
-![Proje Kapak Görseli](BURAYA_KAPAK_FOTOGRAFI_LINKI_GELECEK_VEYA_DOSYA_YOLU)
+![Proje Kapak Görseli](1735228830619.jfif)
 
-> **"Erken teşhis hayat kurtarır."** > Bu proje, yapay zeka destekli görüntü işleme teknikleri kullanarak cilt lezyonlarını analiz eder ve kanser riskini tahmin eder.
+> **"Erken teşhis hayat kurtarır."**
+> Bu proje, yapay zeka destekli görüntü işleme teknikleri kullanarak cilt lezyonlarını analiz eder ve kanser riskini tahmin eder.
 
 ## 📖 Proje Hakkında
 
@@ -31,8 +32,6 @@ Proje geliştirme sürecinde aşağıdaki modern kütüphaneler ve teknikler kul
 | **Pandas & NumPy** | Veri manipülasyonu ve matris işlemleri. |
 | **Matplotlib & Seaborn** | Veri görselleştirme ve başarı grafikleri. |
 
-![Model Mimarisi veya Eğitim Grafiği](BURAYA_EGITIM_GRAFIGI_LINKI_GELECEK)
-
 ---
 
 ## 📊 Veri Seti (Dataset)
@@ -60,4 +59,46 @@ root/
 │       └── malignant/
 ├── malignant-vs-benign-detection.ipynb  # Eğitim Dosyası
 ├── Test.ipynb                           # Test Dosyası
-└── model.h5 (varsa)                     # Eğitilmiş Model
+├── 1735228830619.jfif                   # Görseller
+├── 1735228830470.jfif
+└── 1735228830384.jfif
+```
+##🚀 Kurulum ve Kullanım
+Projeyi yerel makinenizde çalıştırmak için adımları takip edin:
+
+1. Repoyu Klonlayın:
+
+```Bash
+
+git clone [https://github.com/KULLANICI_ADINIZ/PROJE_ADI.git](https://github.com/KULLANICI_ADINIZ/PROJE_ADI.git)
+cd PROJE_ADI
+2. Gerekli Kütüphaneleri Yükleyin:
+```
+```Bash
+
+pip install tensorflow xgboost scikit-learn pandas numpy matplotlib seaborn jupyter
+```
+### 3. Modeli Çalıştırın:
+
+Eğitim için: malignant-vs-benign-detection.ipynb dosyasını açın ve hücreleri sırasıyla çalıştırın.
+
+Test için: Eğer elinizde model.h5 dosyası varsa, Test.ipynb dosyasını kullanarak yeni resimler üzerinde tahmin yapabilirsiniz.
+
+## 📈 Performans Analizi
+Modelin başarısı, test verisi üzerinde Confusion Matrix (Karmaşıklık Matrisi) ve Doğruluk (Accuracy) skorları ile ölçülmüştür.
+
+Confusion Matrix
+Modelin hangi sınıfları ne kadar doğru tahmin ettiğini gösteren matris:
+
+Örnek Test Sonucu
+Test.ipynb dosyası kullanılarak yapılan bir tahmin örneği ve güven skoru:
+
+Plaintext
+
+Görüntü İşleniyor...
+--------------------------
+Tahmin: Malignant (Kanser Riski)
+Güven Skoru: %98.57
+--------------------------
+⚠️ Yasal Uyarı
+Bu proje eğitim ve araştırma amaçlı geliştirilmiştir. Sonuçlar kesin tıbbi teşhis yerine geçmez. Şüpheli durumlarda mutlaka bir uzman doktora başvurulmalıdır.
