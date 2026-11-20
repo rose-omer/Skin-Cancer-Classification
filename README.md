@@ -11,6 +11,21 @@
 Dermoskopi görüntüsünden kalibre malign olasılığı veren, eşiği doğrulama kümesinde seçen ve
 kararını Grad-CAM ile gösteren tekrarlanabilir bir PyTorch/timm hattı.
 
+## Ekran görüntüleri
+
+Repoda eğitilmiş model dosyası yok. Görüntüler demonun model olmadan açıldığı durumu gösterir; şekil ve tablo bu yüzden boş.
+
+| | |
+|---|---|
+| ![Model dosyası yokken açılış](docs/ekran/1-giris-model-yok.png)<br>Model dosyası yokken açılış | ![Sonuç şekli ve tablo](docs/ekran/2-sekil-ve-tablo.png)<br>Sonuç şekli ve tablo |
+| ![Tam sayfa](docs/ekran/3-tam-sayfa.png)<br>Tam sayfa |  |
+
+## Kullanım
+
+![Kullanım akışı](docs/ekran/kullanim.gif)
+
+Uyarı onaylanır, dermoskopi görüntüsü yüklenir. Model varsa olasılık, eşik ve Grad-CAM şekli aynı sayfada çıkar.
+
 ## Sonuçlar
 
 Aynı resmî test kümesi (Kaggle fanconic, 660 görüntü: 360 benign, 300 malign).
