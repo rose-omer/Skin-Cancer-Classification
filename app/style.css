@@ -1,0 +1,322 @@
+/* Tasarım tokenleri. Açık tema varsayılan; Gradio karanlık temada kök öğeye .dark ekler. */
+:root {
+  --sl-paper: #f4f6f5;
+  --sl-surface: #ffffff;
+  --sl-ink: #16201d;
+  --sl-muted: #4a5753;
+  --sl-line: #cfd7d4;
+  --sl-line-strong: #93a19c;
+  --sl-accent: #1d5c58;
+  --sl-accent-ink: #ffffff;
+  --sl-focus: #1d5c58;
+  --sl-notice: #fbf6ea;
+  --sl-notice-line: #d9c79a;
+  --sl-low: #2b6a3d;
+  --sl-low-tint: #e3f0e6;
+  --sl-mid: #845400;
+  --sl-mid-tint: #f6ecd6;
+  --sl-high: #a1271d;
+  --sl-high-tint: #f7e2df;
+  --sl-band-hatch: rgba(132, 84, 0, 0.16);
+
+  --sl-text-xs: 0.8125rem;
+  --sl-text-sm: 0.9375rem;
+  --sl-text-md: 1rem;
+  --sl-text-lg: 1.25rem;
+  --sl-text-xl: 1.625rem;
+  --sl-text-num: 2.75rem;
+
+  --sl-space-1: 4px;
+  --sl-space-2: 8px;
+  --sl-space-3: 12px;
+  --sl-space-4: 16px;
+  --sl-space-5: 24px;
+  --sl-space-6: 32px;
+
+  --sl-radius: 6px;
+  --sl-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark {
+  --sl-paper: #111614;
+  --sl-surface: #19201e;
+  --sl-ink: #e5ebe8;
+  --sl-muted: #a7b3ae;
+  --sl-line: #2f3a36;
+  --sl-line-strong: #5d6c66;
+  --sl-accent: #7cc2ba;
+  --sl-accent-ink: #0d1a18;
+  --sl-focus: #7cc2ba;
+  --sl-notice: #211e14;
+  --sl-notice-line: #5e5232;
+  --sl-low: #8ccf9d;
+  --sl-low-tint: #1b2e21;
+  --sl-mid: #e7b75a;
+  --sl-mid-tint: #33281a;
+  --sl-high: #f29a8f;
+  --sl-high-tint: #3a1f1c;
+  --sl-band-hatch: rgba(231, 183, 90, 0.18);
+}
+
+/* Gradio'nun color_accent değişkeninin karanlık sürümü yok; seçili sekme okunur kalsın. */
+.dark .gradio-container { --color-accent: #7cc2ba; }
+
+/* Tarayıcı yüzeyleri */
+.gradio-container ::selection { background: var(--sl-accent); color: var(--sl-accent-ink); }
+.gradio-container :focus-visible {
+  outline: 2px solid var(--sl-focus) !important;
+  outline-offset: 2px;
+}
+.gradio-container {
+  max-width: 1120px !important;
+  margin-inline: auto !important;
+  font-variant-numeric: tabular-nums;
+}
+.gradio-container a { color: var(--sl-accent); text-underline-offset: 0.18em; }
+
+/* Başlık */
+.sl-header { padding: var(--sl-space-5) 0 var(--sl-space-3); }
+.sl-header h1 {
+  margin: 0;
+  font-size: var(--sl-text-xl);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--sl-ink);
+  text-wrap: balance;
+}
+.sl-header p {
+  margin: var(--sl-space-2) 0 0;
+  max-width: 68ch;
+  font-size: var(--sl-text-md);
+  line-height: 1.5;
+  color: var(--sl-muted);
+}
+
+/* Kalıcı uyarı ve onay */
+.sl-consent {
+  border: 1px solid var(--sl-notice-line) !important;
+  background: var(--sl-notice) !important;
+  border-radius: var(--sl-radius) !important;
+}
+.sl-consent > *,
+.sl-consent .styler,
+.sl-consent .form,
+.sl-consent .block {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+.sl-consent .block:has(input[type="checkbox"]) { padding: var(--sl-space-3) var(--sl-space-4) var(--sl-space-4) 48px; }
+
+/* Grad-CAM grubu sonuç paneliyle aynı yüzeyde */
+.sl-cam {
+  border: 1px solid var(--sl-line) !important;
+  border-radius: var(--sl-radius) !important;
+  background: var(--sl-surface) !important;
+}
+.sl-cam .styler, .sl-cam .form, .sl-cam .block {
+  background: var(--sl-surface) !important;
+  border: 0 !important; /* grup içindeki görüntü bloğu yoksa 3px currentColor kenar alır */
+}
+
+/* Panel, yanındaki bloklarla aynı hizada başlasın */
+.gradio-container .html-container:has(.sl-panel) { padding: 0 !important; }
+.sl-notice { display: flex; gap: var(--sl-space-3); padding: var(--sl-space-4) var(--sl-space-4) 0; }
+.sl-notice svg { flex: none; margin-top: 2px; color: var(--sl-mid); }
+.sl-notice p { margin: 0; max-width: 72ch; line-height: 1.5; color: var(--sl-ink); }
+.sl-notice p + p { margin-top: var(--sl-space-2); }
+.sl-notice strong { font-weight: 600; }
+.sl-notice .sl-en { font-size: var(--sl-text-sm); color: var(--sl-muted); }
+.sl-notice .sl-privacy { font-size: var(--sl-text-sm); color: var(--sl-muted); }
+.sl-consent label { font-weight: 600; }
+
+/* Bölüm başlığı */
+.sl-h2 {
+  margin: 0 0 var(--sl-space-3);
+  font-size: var(--sl-text-lg);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--sl-ink);
+}
+/* Onaysız durum: pasif yükleme alanının nedeni yanında yazılı */
+.gradio-container .html-container:has(.sl-gate) { padding: 0 !important; }
+.sl-gate:empty { display: none; }
+.sl-gate__note {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-2);
+  margin: 0;
+  padding: var(--sl-space-2) var(--sl-space-3);
+  border: 1px dashed var(--sl-line-strong);
+  border-radius: var(--sl-radius);
+  font-size: var(--sl-text-sm);
+  line-height: 1.4;
+  color: var(--sl-ink);
+}
+.sl-gate__note svg { flex: none; color: var(--sl-muted); }
+
+.sl-hint { margin: 0; font-size: var(--sl-text-sm); line-height: 1.5; color: var(--sl-muted); }
+
+/* Sonuç paneli: boş, hata ve sonuç durumları */
+.sl-panel {
+  min-height: 220px;
+  padding: var(--sl-space-5);
+  border: 1px solid var(--sl-line);
+  border-radius: var(--sl-radius);
+  background: var(--sl-surface);
+  color: var(--sl-ink);
+}
+.sl-empty { display: grid; align-content: center; gap: var(--sl-space-2); }
+.sl-empty .sl-h2 { margin: 0; }
+.sl-empty p { margin: 0; max-width: 46ch; line-height: 1.5; color: var(--sl-muted); }
+
+.sl-error { border-color: var(--sl-high); }
+.sl-error .sl-h2 { color: var(--sl-high); }
+.sl-error p { margin: 0; line-height: 1.5; }
+
+.sl-readout { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sl-space-3) var(--sl-space-4); }
+.sl-prob {
+  font-size: var(--sl-text-num);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.sl-caption { margin: var(--sl-space-2) 0 0; font-size: var(--sl-text-sm); color: var(--sl-muted); }
+
+.sl-band {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sl-space-2);
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: var(--sl-text-sm);
+  font-weight: 600;
+  color: var(--sl-ink);
+}
+.sl-band::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.sl-band__rule { font-weight: 400; }
+.sl-band--dusuk { background: var(--sl-low-tint); color: var(--sl-low); }
+.sl-band--belirsiz { background: var(--sl-mid-tint); color: var(--sl-mid); }
+.sl-band--yuksek { background: var(--sl-high-tint); color: var(--sl-high); }
+
+/* Olasılık ölçeği: belirsiz bant, eşik ve sonuç aynı eksende */
+.sl-scale { margin: var(--sl-space-5) 0 var(--sl-space-2); }
+.sl-scale__track {
+  position: relative;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--sl-paper);
+  border: 1px solid var(--sl-line);
+}
+.sl-scale__band {
+  position: absolute;
+  inset-block: 0;
+  background: repeating-linear-gradient(
+    135deg, var(--sl-band-hatch) 0 4px, transparent 4px 8px
+  );
+  border-inline: 1px solid var(--sl-mid);
+}
+.sl-scale__threshold {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  width: 0;
+  border-left: 2px dashed var(--sl-ink);
+}
+.sl-scale__marker {
+  position: absolute;
+  top: -9px;
+  bottom: -9px;
+  width: 4px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: var(--sl-marker, var(--sl-ink));
+  transform-origin: bottom;
+  animation: sl-pin 280ms var(--sl-ease-out) both;
+}
+.sl-scale__ticks {
+  position: relative;
+  height: 1.4em;
+  margin-top: var(--sl-space-2);
+  font-size: var(--sl-text-xs);
+  color: var(--sl-muted);
+}
+.sl-scale__ticks span { position: absolute; transform: translateX(-50%); white-space: nowrap; }
+.sl-scale__ticks span:first-child { transform: none; }
+.sl-scale__ticks span:last-child { transform: translateX(-100%); }
+.sl-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sl-space-2) var(--sl-space-4);
+  margin: var(--sl-space-2) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--sl-text-xs);
+  color: var(--sl-muted);
+}
+.sl-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.sl-key { display: inline-block; width: 14px; height: 10px; border-radius: 2px; }
+.sl-key--band { background: repeating-linear-gradient(135deg, var(--sl-band-hatch) 0 3px, transparent 3px 6px); border: 1px solid var(--sl-mid); }
+.sl-key--threshold { width: 0; height: 12px; border-left: 2px dashed var(--sl-ink); }
+.sl-key--marker { width: 4px; height: 12px; background: var(--sl-ink); }
+
+.sl-threshold { margin: var(--sl-space-4) 0 0; max-width: 62ch; line-height: 1.5; }
+.sl-ood {
+  display: flex;
+  gap: var(--sl-space-2);
+  margin: var(--sl-space-4) 0 0;
+  padding: var(--sl-space-3);
+  border: 1px solid var(--sl-mid);
+  border-radius: var(--sl-radius);
+  background: var(--sl-mid-tint);
+  line-height: 1.5;
+}
+.sl-ood svg { flex: none; margin-top: 3px; color: var(--sl-mid); }
+.sl-footnote {
+  margin: var(--sl-space-5) 0 0;
+  padding-top: var(--sl-space-3);
+  border-top: 1px solid var(--sl-line);
+  font-size: var(--sl-text-sm);
+  line-height: 1.5;
+  color: var(--sl-muted);
+}
+
+/* Checkpoint yok ekranı */
+.sl-missing { max-width: 72ch; min-width: 0; overflow-wrap: anywhere; }
+.sl-missing pre { white-space: pre-wrap; word-break: break-all; }
+.sl-missing p, .sl-missing li { line-height: 1.55; }
+.sl-missing code {
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--sl-paper);
+  border: 1px solid var(--sl-line);
+  font-size: 0.9em;
+}
+.sl-missing pre {
+  margin: var(--sl-space-2) 0 var(--sl-space-3);
+  padding: var(--sl-space-3);
+  overflow-x: auto;
+  border-radius: var(--sl-radius);
+  background: var(--sl-paper);
+  border: 1px solid var(--sl-line);
+}
+.sl-missing pre code { padding: 0; border: 0; background: none; }
+.sl-missing ul { padding-left: 1.2em; }
+
+/* Model hakkında */
+.sl-about { max-width: 72ch; }
+.sl-about table { font-variant-numeric: tabular-nums; }
+
+@keyframes sl-pin { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sl-scale__marker { animation: none; }
+  .gradio-container * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+@media (max-width: 640px) {
+  .sl-header { padding-top: var(--sl-space-4); }
+  .sl-panel { padding: var(--sl-space-4); }
+  .sl-prob { font-size: 2.25rem; }
+}

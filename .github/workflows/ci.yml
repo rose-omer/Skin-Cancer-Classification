@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.13.9"
+      - run: uvx ruff@0.17.6 check .
+      - run: uvx ruff@0.17.6 format --check .
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.13.9"
+          enable-cache: true
+      - name: Ortam (CPU torch, uv.lock)
+        run: uv sync --locked --python 3.12
+      - name: Testler (eğitim ve veri indirme yok)
+        run: uv run pytest -q
