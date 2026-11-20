@@ -107,11 +107,14 @@ uv run python app/app.py
 
 - Checkpoint yoksa demo tahmin yapmaz; nedenini ve çözümü gösteren bir ekran açar.
 - Uyarı onaylanmadan yükleme alanı ve düğme pasif kalır. Kamera girişi kapalıdır.
-- Sonuç: kalibre olasılık, bant ve eşik durumu tek etikette, eşik açıklaması, Grad-CAM.
+- Düzen bir makale figürü gibidir: başlık ve özet, sağda Girdi kutusu, altında Şekil 1 (a model
+  girişi, b Grad-CAM, c olasılık ekseni, d karar kuralı), sonra Yöntem, Tablo 1 ve Sınırlar.
+- Sonuç: kalibre olasılık, bant ve eşik durumu, eşik açıklaması, Grad-CAM.
 - Yüklenen görüntü kalıcı olarak saklanmaz. Gradio'nun geçici kopyası yaklaşık 20 dakika içinde
   silinir (temizlik 10 dakikada bir koşar).
-- Yazı tipi Gradio paketiyle gelir ve aynı sunucudan yüklenir. Demo dış yazı tipi servisi
-  çağırmaz.
+- Yazı tipleri aynı sunucudan yüklenir: Source Sans 3 Gradio paketiyle gelir, Source Serif 4
+  `app/fonts/` içindedir (OFL-1.1). Demo dış yazı tipi servisi çağırmaz.
+- Gradio telemetrisi varsayılan olarak kapalıdır (`GRADIO_ANALYTICS_ENABLED=False`).
 
 Ortam değişkenleri:
 
@@ -121,6 +124,7 @@ Ortam değişkenleri:
 | `MODEL_REPO`, `MODEL_REVISION` | HF Hub model reposu (verilirse yerel klasörün yerine) | yok |
 | `SKINLESION_BACKEND` | `torch` (Grad-CAM var) ya da `onnx` | `torch` |
 | `GRADIO_SERVER_PORT` | Demo portu | `7860` |
+| `GRADIO_ANALYTICS_ENABLED` | Gradio telemetrisi (Hugging Face'e kullanım verisi) | `False` |
 
 ONNX çıkarımı için checkpoint klasörüne `model.onnx` yazın, sonra arka ucu değiştirin:
 
