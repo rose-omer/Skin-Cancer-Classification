@@ -1,0 +1,21 @@
+# Ortam
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Veri ve eğitim çıktıları (repoya girmez)
+data/
+runs/
+checkpoints/
+*.h5
+*.safetensors
+*.onnx
+*.onnx.data
+mlruns/
+
+# Gradio önbelleği
+.gradio/
+flagged/

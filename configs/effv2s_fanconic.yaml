@@ -1,0 +1,27 @@
+# Aşama A: Kaggle fanconic seti, EfficientNetV2-S ince ayar.
+# Çalıştırma: python -m skinlesion.train --config configs/effv2s_fanconic.yaml
+experiment_id: effv2s_fanconic
+data_root: data
+splits_dir: splits
+output_dir: checkpoints
+
+model_name: tf_efficientnetv2_s.in21k_ft_in1k
+pretrained: true
+img_size: 224          # kaynak görüntüler 224 px; büyütme bilgi eklemez
+
+val_fraction: 0.15     # train'den, sınıf oranı korunarak
+seed: 42
+batch_size: 32
+num_workers: 4
+
+head_epochs: 3         # aşama 1: yalnız sınıflandırma başı
+finetune_epochs: 20    # aşama 2: bütün ağ, cosine
+head_lr: 1.0e-3
+finetune_lr: 1.0e-4
+weight_decay: 0.05
+patience: 5            # val AUROC'a göre erken durdurma
+
+target_sensitivity: 0.90
+band_low: 0.3
+band_high: 0.7
+ood_quantile: 0.99
